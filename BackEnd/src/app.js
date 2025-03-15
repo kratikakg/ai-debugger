@@ -1,19 +1,19 @@
-const express = require('express');
-const aiRoutes = require('./routes/ai.routes')
-const cors = require('cors')
+const express = require("express");
+const cors = require("cors");
 
-const app = express()
+const app = express();
 
-app.use(cors({ origin: "https://aidebugger.vercel.app/" }));
+// ✅ Enable CORS for your frontend domain
+app.use(cors({
+    origin: "https://aidebugger.vercel.app",  // Allow frontend domain
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type,Authorization",
+    credentials: true
+}));
 
+// ✅ Optional: Allow All Origins (For Debugging)
+// app.use(cors());
 
+app.use(express.json());
 
-app.use(express.json())
-
-app.get('/', (req, res) => {
-    res.send('Hello World')
-})
-
-app.use('/ai', aiRoutes)
-
-module.exports = app
+module.exports = app;
