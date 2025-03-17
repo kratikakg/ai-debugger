@@ -1,28 +1,13 @@
-// const express = require("express");
-// const cors = require("cors");
 
-// const app = express();
-// app.use(express.json());
-
-// app.use(cors());
-
-
-// app.options("*", cors());
-
-// // Routes
-// const aiRoutes = require("./routes/ai.routes");
-// app.use("/ai", aiRoutes);
-
-// module.exports = app;
 const express = require("express");
 const cors = require("cors");
 
 const app = express();
-app.use(express.json());
-app.use(cors());
+app.use(cors({ origin: "*" }));
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: true }));
 
-// Register Routes
-const aiRoutes = require("./routes/ai.routes");
-app.use("/ai", aiRoutes); // ✅ Ensure this is correct
+const aiRoutes = require("./routes/ai.routes"); 
+app.use("/ai", aiRoutes);
 
 module.exports = app;
