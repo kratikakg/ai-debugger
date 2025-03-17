@@ -22,9 +22,10 @@ function App() {
   }, [])
 
   async function reviewCode() {
-    const response = await axios.post('http://ai-debugger-nine.vercel.app/ai/get-review' , { code })
-    setReview(response.data)
+    const response = await axios.post('https://aidebuggerbackend-m80c1sinj-kratikakgs-projects.vercel.app/ai/get-review' , { code });
+    setReview(response.data);
   }
+  
 
   return (
     <>
