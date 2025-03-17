@@ -62,6 +62,7 @@ AI Debugger is an AI-driven code review tool that analyzes JavaScript code for r
 ## 📸 Screenshots  
 ![AI Debugger - Google Chrome 17-03-2025 15_47_12](https://github.com/user-attachments/assets/fcbb88a8-5158-4d80-b836-431606e21017)
 
+![AI Debugger - Google Chrome 17-03-2025 15_46_48](https://github.com/user-attachments/assets/401a319b-924a-4fdc-a150-225f3e2098d8)
 
 ## 🎯 Live Demo  
 👉 [AI Debugger Frontend](https://aidebugger.vercel.app/)  
