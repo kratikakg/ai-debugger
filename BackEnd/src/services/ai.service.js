@@ -81,12 +81,17 @@ const model = genAI.getGenerativeModel({
 
 
 async function generateContent(prompt) {
-    const result = await model.generateContent(prompt);
-
-    console.log(result.response.text())
-
-    return result.response.text();
-
+    try {
+        const result = await model.generateContent(prompt);
+        const response = await result.response;  
+        const text = response.text();  
+        console.log("AI Review:", text);
+        return text;
+    } catch (error) {
+        console.error("Error generating content:", error);
+        return "Error generating AI review.";
+    }
 }
+
 
 module.exports = generateContent    

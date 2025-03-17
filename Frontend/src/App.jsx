@@ -22,9 +22,21 @@ function App() {
   }, [])
 
   async function reviewCode() {
-    const response = await axios.post('https://aidebuggerbackend-m80c1sinj-kratikakgs-projects.vercel.app/ai/get-review' , { code });
-    setReview(response.data);
-  }
+    try {
+        console.log("Sending request with code:", code);
+        const response = await axios.post(
+            "https://aidebuggerbackend.vercel.app/ai/get-review",
+            { code }
+        );
+        console.log("Response received:", response.data);
+        setReview(response.data.review || "No review received.");
+    } catch (error) {
+        console.error("Error fetching review:", error);
+        setReview("Error fetching review. Check console for details.");
+    }
+}
+
+
   
 
   return (
